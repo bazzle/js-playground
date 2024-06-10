@@ -95,3 +95,15 @@ const printArray = (arr) => {
     return newList;
 }
 container.appendChild(printArray(slicedArray));
+
+// Stringify array values
+const arrayString = types.join(', ');
+
+// Output sentence
+const coffeeTypesSentence = document.createElement('p');
+coffeeTypesSentence.innerHTML = `We serve all types of coffee including ${arrayString}`;
+container.appendChild(coffeeTypesSentence);
+
+// Concatenate arrays
+const concArray = origins.concat(types);
+console.log(concArray);
