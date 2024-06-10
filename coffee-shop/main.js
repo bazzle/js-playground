@@ -31,6 +31,23 @@ const coffeeRange = [
     }
 ];
 
+
+// Grab the first item in the array
+
+const removeFirst = () => {
+    const firstItem = coffeeRange.shift();
+    console.log(firstItem);
+}
+// removeFirst();
+
+// Remove permanently, using splice
+const removePermantently = (toRemove) => {
+    coffeeRange.splice(toRemove, 1);
+}
+
+// removePermantently(0);
+
+
 let outOfStock = 0;
 
 coffeeRange.forEach((i) => {
@@ -51,3 +68,30 @@ if(coffeeRange.length > 0 && outOfStock != coffeeRange.length ){
 } else {
     container.innerHTML = "We are out I'm afraid";
 }
+
+// prototypes
+
+const origins = ['Brazil', 'India', 'Colombia', 'Guetamala', 'El Salvador'];
+const types = ['ground', 'coarse', 'roasted beans', 'raw beans'];
+
+// reorder alphabetically
+// origins.sort();
+
+// Get index by name
+const indexItem = origins.indexOf('Colombia');
+// Show array and indexitem
+// console.log(origins, indexItem);
+
+// Slice away specific items
+const slicedArray = origins.slice(1, 3);
+
+const printArray = (arr) => {
+    const newList = document.createElement('ul');
+    arr.forEach((i) => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = i;
+        newList.appendChild(listItem);
+    })
+    return newList;
+}
+container.appendChild(printArray(slicedArray));
