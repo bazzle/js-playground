@@ -1,3 +1,4 @@
+// Set variables
 const container = document.querySelector('.container');
 
 const coffeeRange = [
@@ -32,11 +33,11 @@ const coffeeRange = [
 ];
 
 
-// Grab the first item in the array
+// MODIFY ARRAY ------------------------------------------------------
 
 const removeFirst = () => {
     const firstItem = coffeeRange.shift();
-    console.log(firstItem);
+    // console.log(firstItem);
 }
 // removeFirst();
 
@@ -47,6 +48,7 @@ const removePermantently = (toRemove) => {
 
 // removePermantently(0);
 
+// FOREACH -----------------------------------------------------------
 
 let outOfStock = 0;
 
@@ -55,6 +57,8 @@ coffeeRange.forEach((i) => {
         outOfStock++;
     }
 });
+
+// PRINT TO DOM ------------------------------------------------------
 
 if(coffeeRange.length > 0 && outOfStock != coffeeRange.length ){
     const list = document.createElement('ul');
@@ -69,41 +73,6 @@ if(coffeeRange.length > 0 && outOfStock != coffeeRange.length ){
     container.innerHTML = "We are out I'm afraid";
 }
 
-// prototypes
 
-const origins = ['Brazil', 'India', 'Colombia', 'Guetamala', 'El Salvador'];
-const types = ['ground', 'coarse', 'roasted beans', 'raw beans'];
 
-// reorder alphabetically
-// origins.sort();
-
-// Get index by name
-const indexItem = origins.indexOf('Colombia');
-// Show array and indexitem
-// console.log(origins, indexItem);
-
-// Slice away specific items
-const slicedArray = origins.slice(1, 3);
-
-const printArray = (arr) => {
-    const newList = document.createElement('ul');
-    arr.forEach((i) => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = i;
-        newList.appendChild(listItem);
-    })
-    return newList;
-}
-container.appendChild(printArray(slicedArray));
-
-// Stringify array values
-const arrayString = types.join(', ');
-
-// Output sentence
-const coffeeTypesSentence = document.createElement('p');
-coffeeTypesSentence.innerHTML = `We serve all types of coffee including ${arrayString}`;
-container.appendChild(coffeeTypesSentence);
-
-// Concatenate arrays
-const concArray = origins.concat(types);
-console.log(concArray);
+console.log(window);

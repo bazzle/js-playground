@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My playground</title>
+    <script src="main.js" defer></script>
+    <script src="script2.js" defer></script>
+</head>
+<body>
+    <h1 class="output">Place for playing</h1>
+    <p>Open the console</p>
+    <div class="container"></div>
+    <script>
+        var testVar = "This is a var so is accessible globally via window object";
+        const testConst = "This is a const so is not accessible globally via window object";
+        const originsNew = ['Brazil', 'India', 'Colombia', 'Guetamala', 'El Salvador'];
+        function checkOriginNew(origin){
+            return originsNew.includes(origin);
+        }
+    </script>
+</body>
+</html>
