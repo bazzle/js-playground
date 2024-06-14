@@ -156,21 +156,25 @@ let gridArray = [
 
 
 const coffeeChecker = {
-    needsRoasting : (coffee) => {
+    needsRoasting : function(coffee){
         return coffee.type === 'raw beans'
     },
-    needsMachine : (coffee) => {
+    needsMachine : function(coffee){
         return coffee.type != 'instant'
     },
-    under8 : (coffee) => {
+    under8 : function(coffee){
         const priceNumber = parseInt(coffee.price.replace('£', ''));
         return priceNumber < 8
     },
-    inStock : (coffee) => {
+    inStock : function(coffee){
         return coffee.inStock
+    },
+    rawbeansInStock : function(coffee){
+        return this.needsRoasting(coffee) && this.inStock(coffee)
     }
 }
 
 console.log(coffeeChecker.needsRoasting(coffeeRange[3]));
 console.log(coffeeChecker.under8(coffeeRange[2]));
 console.log(coffeeChecker.inStock(coffeeRange[1]));
+console.log(coffeeChecker.rawbeansInStock(coffeeRange[3]));
