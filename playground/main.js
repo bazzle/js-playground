@@ -153,8 +153,6 @@ let gridArray = [
 
 // OBJECTS WITH FUNCTIONS INSIDE -----------------------------------------
 
-
-
 const coffeeChecker = {
     needsRoasting : function(coffee){
         return coffee.type === 'raw beans'
@@ -172,9 +170,25 @@ const coffeeChecker = {
     rawbeansInStock : function(coffee){
         return this.needsRoasting(coffee) && this.inStock(coffee)
     }
+    // "this" keyword doesn't work if using arrow function
 }
 
 console.log(coffeeChecker.needsRoasting(coffeeRange[3]));
 console.log(coffeeChecker.under8(coffeeRange[2]));
 console.log(coffeeChecker.inStock(coffeeRange[1]));
 console.log(coffeeChecker.rawbeansInStock(coffeeRange[3]));
+
+
+// FOR LOOP -----------------------------------------
+
+function forloopList(){
+    const newList = document.createElement('ul');
+    container.appendChild(newList);
+    for (var num = 1; num <= 10; num++){
+        const newListItem = document.createElement('li');
+        newList.append(newListItem);
+        newListItem.innerText = num;
+    }
+}
+
+forloopList();

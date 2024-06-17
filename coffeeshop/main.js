@@ -62,6 +62,7 @@ coffeeRange.forEach((i) => {
 
 if(coffeeRange.length > 0 && outOfStock != coffeeRange.length ){
     const list = document.createElement('ul');
+    list.classList.add('coffee-range');
     container.appendChild(list);
     coffeeRange.forEach((i) => {
         const listItem = document.createElement('li');
@@ -74,5 +75,37 @@ if(coffeeRange.length > 0 && outOfStock != coffeeRange.length ){
 }
 
 
+// SOME DOM MANIPULATION ------------------------------------------------------
 
-console.log(window);
+// insert before
+
+const mainHeading = document.createElement('h1');
+
+mainHeading.innerHTML = "Hello, this is our coffee range";
+mainHeading.classList.add("main-heading");
+
+document.body.insertBefore(mainHeading, container);
+
+// clone node
+// True to clone contents also
+const clonedContainer = container.cloneNode(true);
+console.log(clonedContainer);
+
+// FOR LOOP ------------------------------------------------------
+
+// Get list items
+const listItems = document.querySelectorAll('.coffee-range li');
+
+for (const item of listItems){
+    item.classList.add('coffee-range__item');
+}
+
+console.log(listItems);
+
+// FOR IN LOOP--------------------------
+
+// For looping through properties of an object
+const coffeeObj = coffeeRange[0];
+for (const property in coffeeObj){
+    console.log(`${property} : ${coffeeObj[property]}`);
+}

@@ -20,3 +20,21 @@
 //     console.log('from an Immediately Invoked Function Expression');
 // })();
 
+// FUNCTION PARAMETERS --------------------------------------------------------------
+
+// Default parameter, if its not added to the function instance
+function priceMessage(amount, currency = '$'){
+    return `This order is ${currency}${amount}`;
+}
+console.log(priceMessage('12.30'));
+
+// REST -----------------------------------------------------------------------------
+
+// When you want to be able to add an arbitrary amount of parameters
+
+function averageHousePrice(... prices){
+    const totalAll = prices.reduce((total, price) => total + price);
+    return totalAll / prices.length;
+}
+
+console.log(averageHousePrice(270, 250, 360, 285, 230, 300, 300, 350, 260, 325, 280, 350, 310, 250, 260, 365, 280, 375));
