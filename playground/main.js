@@ -196,26 +196,34 @@ forloopList();
 
 // SWITCH STATEMENT -----------------------------------------
 
-const favCoffee = "Italian";
-switch (favCoffee){
-    case 'Italian' : console.log('The Italian Job blend no2 ');
-    break;
-    case 'Javan' : console.log('Mocha Java blend no3!!');
-    break;
-    case 'Swiss' : console.log('Swiss water decaf blend no11');
-    break;
+// A better way of returning things based on conditions, better than a load of if statements
+// This simply returns a string based on the string that's passed in
+const favCoffeeQuestion = (coffee) => {
+    switch (coffee){
+        case 'Italian' : return 'The Italian Job blend no2';
+        break;
+        case 'Javan' : return 'Mocha Java blend no3!!';
+        break;
+        case 'Swiss' : return 'Swiss water decaf blend no11';
+        break;
+        default: return 'You need to pass in a coffee type';
+    }
+}
+// console.log(favCoffeeQuestion('Italian'));
+
+// This sets a variable value based on a string passed in. Here we pass in a coffee from the coffee range (type)
+const deliveryTypeQuestion = (deliveryType) => {
+    switch (deliveryType){
+        case 'ground' : deliveryType = 'Can deliver';
+        break;
+        case 'raw beans' : deliveryType = 'Pickup only';
+        break;
+        default: deliveryType = 'Please get in contact';
+    }
+    return deliveryType;
 }
 
-let deliveryType;
-switch (coffeeRange[0].type){
-    case 'ground' : deliveryType = 'Can deliver';
-    break;
-    case 'raw beans' : deliveryType = 'Pickup only';
-    break;
-    default: deliveryType = 'Please get in contact';
-}
-
-console.log(deliveryType);
+// console.log(deliveryTypeQuestion(coffeeRange[2].type));
 
 // TYPE CONVERSION -----------------------------------------
 const number1 = Number("7");
@@ -223,8 +231,8 @@ const number2 = 2;
 const total = number1 + number2;
 const stringTotal = String(total);
 
-console.log(typeof total);
-console.log(typeof stringTotal);
+// console.log(typeof total);
+// console.log(typeof stringTotal);
 
 
 // OPTIONAL CHAINING -----------------------------------------
@@ -239,4 +247,4 @@ let currentOrder = {
     "status" : "Out for delivery"
 }
 
-console.log(currentOrder.customerName);
+// console.log(currentOrder.customerName);
