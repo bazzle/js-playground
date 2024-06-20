@@ -1,5 +1,10 @@
 # js-playground
-My learning journey, brushing up on vanilla JS to react fundaments to next.js
+My learning journey, brushing up on vanilla JS
+Online coffee shop app theme.
+
+## Instructions
+
+Run `browser-sync start --config bs-config.js`
 
 ## Tutorial
 [Link to part 1](https://www.skillshare.com/en/classes/modern-javascript-for-beginners-part-1/618955486)
