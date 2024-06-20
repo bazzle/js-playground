@@ -26,7 +26,7 @@
 function priceMessage(amount, currency = '$'){
     return `This order is ${currency}${amount}`;
 }
-console.log(priceMessage('12.30'));
+// console.log(priceMessage('12.30'));
 
 // REST -----------------------------------------------------------------------------
 
@@ -37,4 +37,4 @@ function averageHousePrice(... prices){
     return totalAll / prices.length;
 }
 
-console.log(averageHousePrice(270, 250, 360, 285, 230, 300, 300, 350, 260, 325, 280, 350, 310, 250, 260, 365, 280, 375));
+// console.log(averageHousePrice(270, 250, 360, 285, 230, 300, 300, 350, 260, 325, 280, 350, 310, 250, 260, 365, 280, 375));

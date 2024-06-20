@@ -99,7 +99,7 @@ const coffeeRangeModified = coffeeRange
 .map((item) => item.name.toUpperCase())
 .filter((item) => item.origin !== 'Brazil');
 
-console.log(coffeeRangeModified);
+// console.log(coffeeRangeModified);
 
 // ARRAY DESTRUCTURING ------------------------------------------------------
 
@@ -173,10 +173,10 @@ const coffeeChecker = {
     // "this" keyword doesn't work if using arrow function
 }
 
-console.log(coffeeChecker.needsRoasting(coffeeRange[3]));
-console.log(coffeeChecker.under8(coffeeRange[2]));
-console.log(coffeeChecker.inStock(coffeeRange[1]));
-console.log(coffeeChecker.rawbeansInStock(coffeeRange[3]));
+// console.log(coffeeChecker.needsRoasting(coffeeRange[3]));
+// console.log(coffeeChecker.under8(coffeeRange[2]));
+// console.log(coffeeChecker.inStock(coffeeRange[1]));
+// console.log(coffeeChecker.rawbeansInStock(coffeeRange[3]));
 
 
 // FOR LOOP -----------------------------------------
@@ -192,3 +192,51 @@ function forloopList(){
 }
 
 forloopList();
+
+
+// SWITCH STATEMENT -----------------------------------------
+
+const favCoffee = "Italian";
+switch (favCoffee){
+    case 'Italian' : console.log('The Italian Job blend no2 ');
+    break;
+    case 'Javan' : console.log('Mocha Java blend no3!!');
+    break;
+    case 'Swiss' : console.log('Swiss water decaf blend no11');
+    break;
+}
+
+let deliveryType;
+switch (coffeeRange[0].type){
+    case 'ground' : deliveryType = 'Can deliver';
+    break;
+    case 'raw beans' : deliveryType = 'Pickup only';
+    break;
+    default: deliveryType = 'Please get in contact';
+}
+
+console.log(deliveryType);
+
+// TYPE CONVERSION -----------------------------------------
+const number1 = Number("7");
+const number2 = 2;
+const total = number1 + number2;
+const stringTotal = String(total);
+
+console.log(typeof total);
+console.log(typeof stringTotal);
+
+
+// OPTIONAL CHAINING -----------------------------------------
+
+let currentOrder = {
+    "customerName" : "Freiherr Wilhelm Maximilian von Hohenstein-Schwarzenberg",
+    "shortName" : "brazilian-campestre",
+    "address" : `Schloss Hohenstein
+                Königstraße 123
+                80539 München
+                Germany`,
+    "status" : "Out for delivery"
+}
+
+console.log(currentOrder.customerName);
