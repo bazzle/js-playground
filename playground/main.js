@@ -359,4 +359,3 @@ let SAcoffee3 = {
 // Or we can merge using assign object method
 let SAcoffee3Combined = Object.assign(SAcoffee3Details, southAmericaBase);
 // console.log(SAcoffee3Combined);
-

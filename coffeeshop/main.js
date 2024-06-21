@@ -21,7 +21,7 @@ const coffeeRange = [
         'type':'ground',
         'origin': 'Switzerland',
         'price': '£6.75',
-        'inStock': false
+        'inStock': true
     },
     {
         'name': 'Mocha Java Blend no3',
@@ -122,10 +122,30 @@ let baseStyles = {
     "fontFamily" : "sans-serif"
 }
 
+let paraStyles = {
+    ...baseStyles,
+    "fontSize" : "16px",
+    "padding" : "1.2rem",
+    "line-height" : 1.4
+}
+
+let tagLineStyles = {
+    ...paraStyles,
+    "fontSize" : "12px",
+    "paddingBottom" : 0,
+    "textTransform" : "uppercase",
+    "fontWeight" : "bold"
+}
+
 let headingStyles = {
     ...baseStyles,
     "fontSize" : "22px",
     "padding" : "1.2rem"
+}
+
+let featuredHeadingStyles = {
+    ...headingStyles,
+    "marginBottom" : 0
 }
 
 let listStyles = {
@@ -143,3 +163,38 @@ let listStyles = {
 Object.assign(document.body.style, bodyStyles);
 Object.assign(coffeeList.style, listStyles);
 Object.assign(mainHeading.style, headingStyles);
+
+// LOOP THROUGH OBJECT
+
+function featureBlock(prodIndex){
+    const featuredContainer = document.createElement('div');
+    container.append(featuredContainer);
+    const featuredTagline = document.createElement('div');
+    featuredTagline.innerHTML = "Todays featured coffee";
+    Object.assign(featuredTagline.style, tagLineStyles);
+    featuredContainer.append(featuredTagline);
+
+    const coffeeObj = coffeeRange[prodIndex];
+    if (coffeeObj.inStock != true){
+        const message = document.createElement('p');
+        Object.assign(message.style ,paraStyles);
+        message.innerHTML = "Sorry this product is out of stock, or has been removed";
+        featuredContainer.append(message);
+        return false;
+    }
+    const featuredTitle = document.createElement('h2');
+    featuredTitle.innerHTML = coffeeObj.name;
+    Object.assign(featuredTitle.style, featuredHeadingStyles);
+    const featuredList = document.createElement('ul');
+    for (property in coffeeObj){
+        if (property === 'name'){
+            continue;
+        }
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${property} : ${coffeeObj[property]}`;
+        featuredList.append(listItem);
+    }
+    featuredContainer.append(featuredTitle, featuredList);
+}
+
+featureBlock(3);
