@@ -296,8 +296,7 @@ function coffee(name, type, origin, price, inStock){
 let coffee1 = new coffee('Colombia El Carmen', 'ground', 'Colombia', '£6.75', false);
 let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', true);
 
-
-// create new property
+// create new property for this instance
 coffee1.quality = 'Premium';
 
 // console.log(coffee1);
@@ -309,13 +308,21 @@ coffee1.quality = 'Premium';
 
 // console.log(Object()); // returns minimum properties and methods that is passed down to all objects
 
-// Add a new property to the object constructor
+// Add a new object prototype property
 coffee.prototype.grade = 1;
-console.log(coffee2);
+// console.log(coffee2);
 
-let coffeeBase = {
-    "name" : "superblend New"
+// INHERITING OBJECT PROPERTIES -----------------------------------------
+// coffee products from South America all share common properties
+
+let southAmericaBase = {
+    "region" : "South America",
+    "originCode" : "3278",
+    "Imported" : true,
+    "distributionHub" : "El Paso"
 }
 
-let coffeeVariant = Object.create(coffeeBase);
-console.log(coffeeVariant.name);
+// Inhherits into the object prototype
+let coffee3 = Object.create(southAmericaBase);
+console.log(coffee3.region);
+
