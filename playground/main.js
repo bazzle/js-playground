@@ -313,8 +313,8 @@ coffee.prototype.grade = 1;
 // console.log(coffee2);
 
 // INHERITING OBJECT PROPERTIES -----------------------------------------
-// coffee products from South America all share common properties
 
+// coffee products from South America all share common properties
 let southAmericaBase = {
     "region" : "South America",
     "originCode" : "3278",
@@ -324,5 +324,39 @@ let southAmericaBase = {
 
 // Inhherits into the object prototype
 let coffee3 = Object.create(southAmericaBase);
-console.log(coffee3.region);
+// console.log(coffee3.region);
+
+// COPYING OBJECT PROPERTIES -----------------------------------------
+
+// This imports the base obect in, as a nested object
+let SAcoffee1 = {
+    southAmericaBase,
+    "name" : "COLOMBIA CAMIONETTA ANOXIC SUGARCANE DECAF Nº 238",
+    "origin" : "Colombia"
+};
+
+// This imports the base object, as inline properties
+let SAcoffee2 = {
+    ...southAmericaBase,
+    "name" : "BRAZIL MIÓ MESODO Nº 234",
+    "origin" : "Brazil"
+};
+
+// Or we can import 2 objects into one
+let SAcoffee3Details = {
+    "name" : "BRAZIL MIÓ MESODO Nº 234",
+    "origin" : "Brazil"
+}
+
+// This is a spread operator
+let SAcoffee3 = {
+    ...southAmericaBase,
+    ...SAcoffee3Details
+}
+
+// console.log(SAcoffee3);
+
+// Or we can merge using assign object method
+let SAcoffee3Combined = Object.assign(SAcoffee3Details, southAmericaBase);
+// console.log(SAcoffee3Combined);
 
