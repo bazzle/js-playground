@@ -3,11 +3,14 @@
 // global object is accessible within Window
 // console.log(window);
 
-// Set variables
+const container = document.querySelector('.container');
+
+// Some arrays and objects to play around with
+
 const origins = ['Brazil', 'India', 'Colombia', 'Guetamala', 'El Salvador'];
 const types = ['ground', 'coarse', 'roasted beans', 'raw beans'];
 
-const container = document.querySelector('.container');
+// Array of object literals
 
 const coffeeRange = [
     {
@@ -46,6 +49,21 @@ const coffeeRange = [
         'inStock': true
     }
 ];
+
+// Object with nesting
+
+let currentOrder = {
+    "customerName" : "Freiherr Wilhelm Maximilian von Hohenstein-Schwarzenberg",
+    "shortName" : "brazilian-campestre",
+    "address" : {
+        "firstLine" : "Schloss Hohenstein",
+        "secondLine" : "Königstraße 123",
+        "postCode" : "80539",
+        "city" : "München",
+        "country" : "Germany"
+    },
+    "status" : "Out for delivery"
+}
 
 // ARRAY STUFF ------------------------------------------------------
 
@@ -237,14 +255,67 @@ const stringTotal = String(total);
 
 // OPTIONAL CHAINING -----------------------------------------
 
-let currentOrder = {
-    "customerName" : "Freiherr Wilhelm Maximilian von Hohenstein-Schwarzenberg",
-    "shortName" : "brazilian-campestre",
-    "address" : `Schloss Hohenstein
-                Königstraße 123
-                80539 München
-                Germany`,
-    "status" : "Out for delivery"
+currentOrder.address = null;
+
+// Prevent error if the object is not there
+// console.log(currentOrder.address?.firstLine); // null instead of error
+
+
+// OBJECT CONSTRUCTOR -----------------------------------------
+
+const premiumCoffee = new Object()
+premiumCoffee.name = "INDONESIA KERINCI HONEY Nº 245";
+premiumCoffee.type = "Raw beans";
+premiumCoffee.origin = "Indonesia";
+premiumCoffee.price = "£6.12";
+premiumCoffee.inStock = true;
+
+// console.log(premiumCoffee);
+
+// // Delete operator
+// delete premiumCoffee.name;
+// console.log(premiumCoffee.name);
+
+// OBJECT CONSTRUCTOR FUNCTION -----------------------------------------
+
+//  'name': 'Colombia El Carmen',
+//  'type':'ground',
+//  'origin': 'Colombia',
+//  'price': '£6.75',
+//  'inStock': false
+
+function coffee(name, type, origin, price, inStock){
+    this.name = name
+    this.type = type
+    this.origin = origin
+    this.price = price
+    this.inStock = inStock
+    this.nameType = this.name + ' ' + this.type
 }
 
-// console.log(currentOrder.customerName);
+let coffee1 = new coffee('Colombia El Carmen', 'ground', 'Colombia', '£6.75', false);
+let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', true);
+
+
+// create new property
+coffee1.quality = 'Premium';
+
+// console.log(coffee1);
+
+// OBJECT PROTOTYPE -----------------------------------------
+
+// Built in properties and methods we don't create ourselves but we have access to.
+// For example on an array, we have a lot of built in array methods
+
+// console.log(Object()); // returns minimum properties and methods that is passed down to all objects
+
+// Add a new property to the object constructor
+coffee.prototype.grade = 1;
+console.log(coffee2);
+
+let coffeeBase = {
+    "name" : "superblend New"
+}
+
+let coffeeVariant = Object.create(coffeeBase);
+console.log(coffeeVariant.name);
