@@ -145,7 +145,8 @@ let headingStyles = {
 
 let featuredHeadingStyles = {
     ...headingStyles,
-    "marginBottom" : 0
+    "marginBottom" : 0,
+    "marginTop" : 0
 }
 
 let listStyles = {
@@ -158,6 +159,13 @@ let listStyles = {
     "line-height" : 1.4,
     "listStyleType" : "none",
     "padding" : "1.2rem"
+}
+
+let featuredStyles = {
+    ...listStyles,
+    "backgroundColor" : "none",
+    "paddingTop" :  "0",
+    "marginTop" : "0"
 }
 
 Object.assign(document.body.style, bodyStyles);
@@ -193,6 +201,7 @@ function featureBlock(prodIndex){
         const listItem = document.createElement('li');
         listItem.innerHTML = `${property} : ${coffeeObj[property]}`;
         featuredList.append(listItem);
+        Object.assign(featuredList.style, featuredStyles);
     }
     featuredContainer.append(featuredTitle, featuredList);
 }
