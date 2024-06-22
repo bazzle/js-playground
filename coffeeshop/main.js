@@ -1,34 +1,35 @@
 // Set variables
 const container = document.querySelector('.container');
 
+// 
 const coffeeRange = [
     {
-        'name': 'Colombia El Carmen',
-        'type':'ground',
-        'origin': 'Colombia',
-        'price': '£6.75',
-        'inStock': false
+        name : 'Colombia El Carmen',
+        type :'ground',
+        origin : 'Colombia',
+        price : '£6.75',
+        inStock : false
     },
     {
-        'name': 'Brazilian Campestre no 109 ',
-        'type':'ground',
-        'origin': 'Brazil',
-        'price': '£8.22',
-        'inStock': false
+        name : 'Brazilian Campestre no 109 ',
+        type :'ground',
+        origin : 'Brazil',
+        price : '£8.22',
+        inStock : false
     },
     {
-        'name': 'Swiss Water Decaf blend no11',
-        'type':'ground',
-        'origin': 'Switzerland',
-        'price': '£6.75',
-        'inStock': true
+        name : 'Swiss Water Decaf blend no11',
+        type :'ground',
+        origin : 'Switzerland',
+        price : '£6.75',
+        inStock : true
     },
     {
-        'name': 'Mocha Java Blend no3',
-        'type':'ground',
-        'origin': 'Java',
-        'price': '£8.22',
-        'inStock': true
+        name : 'Mocha Java Blend no3',
+        type :'ground',
+        origin : 'Java',
+        price : '£8.22',
+        inStock : true
     }
 ];
 
@@ -115,57 +116,57 @@ for (const property in coffeeObj){
 // ADD STYLING TO OBJECT DIRECTLY --------------------------
 
 let bodyStyles = {
-    "margin" : 0
+    margin : 0
 }
 
 let baseStyles = {
-    "fontFamily" : "sans-serif"
+    fontFamily : "sans-serif"
 }
 
 let paraStyles = {
     ...baseStyles,
-    "fontSize" : "16px",
-    "padding" : "1.2rem",
-    "line-height" : 1.4
+    fontSize : "16px",
+    padding : "1.2rem",
+    lineHeight : 1.4
 }
 
 let tagLineStyles = {
     ...paraStyles,
-    "fontSize" : "12px",
-    "paddingBottom" : 0,
-    "textTransform" : "uppercase",
-    "fontWeight" : "bold"
+    fontSize : "12px",
+    paddingBottom : 0,
+    textTransform : "uppercase",
+    fontWeight : "bold"
 }
 
 let headingStyles = {
     ...baseStyles,
-    "fontSize" : "22px",
-    "padding" : "1.2rem"
+    fontSize : "22px",
+    padding : "1.2rem"
 }
 
 let featuredHeadingStyles = {
     ...headingStyles,
-    "marginBottom" : 0,
-    "marginTop" : 0
+    marginBottom : 0,
+    marginTop : 0
 }
 
 let listStyles = {
     ...baseStyles,
-    "backgroundColor" : "gold",
-    "color" : "black",
-    "fontFamily" : "sans-serif",
-    "font-weight" : "bold",
-    "font-size" : "16px",
-    "line-height" : 1.4,
-    "listStyleType" : "none",
-    "padding" : "1.2rem"
+    backgroundColor : "gold",
+    color : "black",
+    fontFamily : "sans-serif",
+    fontWeight : "bold",
+    fontSize : "16px",
+    lineHeight : 1.4,
+    listStyleType : "none",
+    padding : "1.2rem"
 }
 
 let featuredStyles = {
     ...listStyles,
-    "backgroundColor" : "none",
-    "paddingTop" :  "0",
-    "marginTop" : "0"
+    backgroundColor : "none",
+    paddingTop :  "0",
+    marginTop : "0"
 }
 
 Object.assign(document.body.style, bodyStyles);
