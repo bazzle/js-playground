@@ -194,6 +194,8 @@ function featureBlock(prodIndex){
     featuredTitle.innerHTML = coffeeObj.name;
     Object.assign(featuredTitle.style, featuredHeadingStyles);
     const featuredList = document.createElement('ul');
+
+    // This is the for loop
     for (property in coffeeObj){
         if (property === 'name'){
             continue;
@@ -203,7 +205,6 @@ function featureBlock(prodIndex){
         featuredList.append(listItem);
         Object.assign(featuredList.style, featuredStyles);
     }
-    featuredContainer.append(featuredTitle, featuredList);
 }
 
-featureBlock(3);
+featureBlock(1);

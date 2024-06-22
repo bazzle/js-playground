@@ -50,6 +50,16 @@ const coffeeRange = [
     }
 ];
 
+// Single coffee product object to play with
+
+const coffeeObj = {
+    'name': 'Mocha Java Blend no3',
+    'type':'ground',
+    'origin': 'Java',
+    'price': '£8.22',
+    'inStock': true
+}
+
 // Object with nesting
 
 let currentOrder = {
@@ -359,3 +369,24 @@ let SAcoffee3 = {
 // Or we can merge using assign object method
 let SAcoffee3Combined = Object.assign(SAcoffee3Details, southAmericaBase);
 // console.log(SAcoffee3Combined);
+
+
+// Looping through object properties
+
+for (property in coffeeObj){
+    // skip the name
+    if (property === 'name'){
+        continue;
+    }
+    console.log(property);
+}
+
+// Looping through object properties, accessing the keys and values
+
+for (const [key, value] of Object.entries(coffeeObj)){
+    // console.log(`This is the key: ${key} / This is the value: ${value}`);
+};
+// different ways of getting parts of the array-object
+// console.log(Object.entries(coffeeObj));
+// console.log(Object.keys(coffeeObj));
+// console.log(Object.values(coffeeObj));
