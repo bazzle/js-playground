@@ -98,7 +98,7 @@ const slicedArray = origins.slice(1, 3);
         return total + currentValue;
     });
     // console.log(outputNum);
-}());
+})();
 
 // MAP/FILTER/SOME ------------------------------------------------------
 
@@ -130,7 +130,7 @@ const slicedArray = origins.slice(1, 3);
     .filter((item) => item.origin !== 'Brazil');
     // console.log(coffeeRangeModified);
 
-}());
+})();
 
 // ARRAY DESTRUCTURING ------------------------------------------------------
 
@@ -143,7 +143,7 @@ const slicedArray = origins.slice(1, 3);
     // Get all other items from array (rest parameter)
     const [coffeefirst, ...others] = coffeeRange;
     // console.log(others);
-}());
+})();
 
 // SET --------------------------------------------------------------
 
@@ -182,7 +182,7 @@ const slicedArray = origins.slice(1, 3);
     // console.table(gridArray);
     // first value is row, second is column
     // console.log(gridArray[0][2]);
-}());
+})();
 
 
 // OBJECTS WITH FUNCTIONS INSIDE -----------------------------------------
@@ -261,7 +261,7 @@ function forloopList(){
 
     // console.log(deliveryTypeQuestion(coffeeRange[2].type));
 
-}());
+})();
 
 // TYPE CONVERSION -----------------------------------------
 
@@ -273,7 +273,7 @@ function forloopList(){
     
     // console.log(typeof total);
     // console.log(typeof stringTotal);
-}());
+})();
 
 
 // OPTIONAL CHAINING -----------------------------------------
@@ -282,7 +282,7 @@ function forloopList(){
     currentOrder.address = null;
     // Prevent error if the object is not there
     // console.log(currentOrder.address?.firstLine); // null instead of error
-}());
+})();
 
 // OBJECT CONSTRUCTOR -----------------------------------------
 
@@ -301,7 +301,7 @@ function forloopList(){
     delete premiumCoffee.name;
     // console.log(premiumCoffee.name);
 
-}());
+})();
 
 // OBJECT CONSTRUCTOR FUNCTION -----------------------------------------
 
@@ -327,7 +327,7 @@ let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', 
     
     // console.log(coffee1);
 
-}());
+})();
 
 // OBJECT PROTOTYPE -----------------------------------------
 
@@ -340,7 +340,7 @@ let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', 
     // Add a new object prototype property
     coffee.prototype.grade = 1;
     // console.log(coffee2);
-}());
+})();
 
 // INHERITING OBJECT PROPERTIES -----------------------------------------
 
@@ -357,7 +357,7 @@ let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', 
 
     // Inhherits into the object prototype
     const coffee3 = Object.create(southAmericaBase);
-    console.log(coffee3.region);
+    // console.log(coffee3.region);
 
 // COPYING OBJECT PROPERTIES -----------------------------------------
 
@@ -416,7 +416,7 @@ for (const [key, value] of Object.entries(coffeeObj)){
 // console.log(Object.values(coffeeObj));
 
 
-}());
+})();
 
 // DYNAMIC OBJECTS ----------------------------------------------------------
 
@@ -439,7 +439,7 @@ for (const [key, value] of Object.entries(coffeeObj)){
     let newProp = `${coffee1.type} roasting method`;
     coffee1[newProp] = 'anoxic fermentation';
     
-    console.log(coffee1);
+    // console.log(coffee1);
     
     const coffeeList = document.createElement('ul');
     for (property in coffee1){
@@ -466,9 +466,137 @@ for (const [key, value] of Object.entries(coffeeObj)){
         [name] : name
     }
 
-    console.log(coffee2);
+    // console.log(coffee2);
+
+})();
+
+
+// ORDERING / CALLBACK FUNCTION -----------------------------------------------------------------------------
+
+(function(){
+    
+    // Run at the same time / asynchronously
+
+    function callBackAsync(callback){
+        setTimeout(() => {
+            // console.log('run main');
+        },2000);
+        callback();
+    };
+
+    // Run after other / synchronously
+    function callBackSync(callback){
+        // console.log('Run main');
+        setTimeout(() => {
+            callback();
+        },1000)
+    }
+
+    // Run the function, with an anonymous function as callback
+    callBackSync(() => {
+        // console.log('run callback')
+    });
 
 })();
 
 
 
+// PASS ARGUMENTS TO CALLBACK FUNCTION -----------------------------------------------------------------------------
+
+// Can pass arguments to callback function
+// The function reference has to be the last argument
+
+(function(){
+    function listCoffees(passtoCallback, callback){
+        setTimeout(() => {
+            coffeeRange.forEach((item) => {
+                // console.log(item.name);
+            })
+            callback(passtoCallback);
+        },2000);
+    }
+    
+    function listCoffeesDone(stage){
+        if (stage === 'done'){
+            // console.log('DONE!');
+        } else {
+            // console.log('not done');
+        }
+    }
+    
+    // listCoffees('done', listCoffeesDone);
+
+})();
+
+
+
+// PROMISES -----------------------------------------------------------------------------
+
+const dogFetch = "https://dog.ceo/api/breeds/image/random";
+const BtcFetch = "https://blockchain.info/ticker";
+
+// Fetch doggy pic
+
+(function(){
+
+    const image = document.createElement('img');
+    container.append(image);
+
+    // fetchedData = fetch(dogFetch)
+    // .then((response) => {
+    //     // This returns a promose so we can chain on the then function
+    //     response.json().then((data) => {
+    //         console.log(data.message);
+    //     });
+    // })
+    
+    // OR
+    
+    // `then` grabs the fetched data (before it) and pushes it into its callback function, where it can be accessed via argument
+    fetchedData = fetch(dogFetch)
+    .then((response) => {
+        // Reads to completion
+        return response.json();
+    })
+    .then((data) => {
+        // console.log(data);
+        imageSrc = data.message;
+        image.setAttribute('src',imageSrc);
+    })
+    .catch((error) => {
+        // console.log(`There was an error - ${error}`);
+    })
+    .finally((message) => {
+        // console.log('Done settled status, regardless of success or fail, woof');
+    })
+
+})();
+
+
+// Fetch BTC prices
+
+let btcData = null;
+
+function getbtcPrices(){
+
+    fetchedData2 = fetch(BtcFetch)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        btcData = data;
+    })
+    .catch((error) => {
+        console.log(`There was an error - ${error}`);
+    })
+    .finally((message) => {
+        console.log('lfg');
+    })
+
+};
+
+getbtcPrices();
+
+setTimeout(() => {
+    console.log(btcData);
+}, 1000);
