@@ -701,6 +701,8 @@ function promiseConstructorAll(){
 
 // ASYNC - AWAIT -----------------------------------------------------------------------------
 
+// Can prefix a function as async, then we can use await keywork to ensure the next operation completes when the thing has happened.
+
 async function asyncPromise(){
     const response = await fetch(dogFetch);
     const image = await response.json();
