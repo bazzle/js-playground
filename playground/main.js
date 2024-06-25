@@ -317,6 +317,8 @@ function coffee(name, type, origin, price, inStock){
 let coffee1 = new coffee('Colombia El Carmen', 'ground', 'Colombia', '£6.75', false);
 let coffee2 = new coffee('Mocha Java Blend no3', 'raw beans', 'Java', '£8.22', true);
 
+// console.log(coffee1);
+
 
 (function(){
     
@@ -532,45 +534,47 @@ for (const [key, value] of Object.entries(coffeeObj)){
 
 // PROMISES -----------------------------------------------------------------------------
 
+// A promise is an object that handles asynchronous processes
+
+// The fetch API returns a promise
+
+// These are links to JSON objects
 const dogFetch = "https://dog.ceo/api/breeds/image/random";
 const BtcFetch = "https://blockchain.info/ticker";
 
+function addImage(url){
+    const image = document.createElement('img');
+    image.setAttribute('src',url);
+    container.append(image);
+}
+
 // Fetch doggy pic
 
-(function(){
+function FetchDoggyPic(){
 
-    const image = document.createElement('img');
-    container.append(image);
-
-    // fetchedData = fetch(dogFetch)
-    // .then((response) => {
-    //     // This returns a promose so we can chain on the then function
-    //     response.json().then((data) => {
-    //         console.log(data.message);
-    //     });
-    // })
-    
-    // OR
-    
-    // `then` grabs the fetched data (before it) and pushes it into its callback function, where it can be accessed via argument
-    fetchedData = fetch(dogFetch)
-    .then((response) => {
-        // Reads to completion
+    // `fetch` grabs the fetched data from the external source 
+    // `then` is a method we can chain onto a promise, it grabs the fetched data and pushes it into its callback function, where it can be accessed via argument
+    fetchedData = fetch(dogFetch).then((response) => {
+        // Response [body] returns `ReadableStream` which is the json object, needs to be parsed by `.json()`
+        // Reads to completion and returns promise which resolves with the result of parsing the body text as json
+        // Note that despite the method being named json(), the result is not JSON but is instead the result of taking JSON as input and parsing it to produce a JavaScript object.
         return response.json();
-    })
-    .then((data) => {
-        // console.log(data);
-        imageSrc = data.message;
-        image.setAttribute('src',imageSrc);
+    }).then((data) => {
+        // When this is complete
+        console.log(data);
+
+        addImage(imageSrc);
     })
     .catch((error) => {
         // console.log(`There was an error - ${error}`);
     })
     .finally((message) => {
-        // console.log('Done settled status, regardless of success or fail, woof');
+        console.log('Done settled status, regardless of success or fail, woof');
     })
 
-})();
+};
+
+// FetchDoggyPic();
 
 
 // Fetch BTC prices
@@ -595,8 +599,131 @@ function getbtcPrices(){
 
 };
 
-getbtcPrices();
+// getbtcPrices();
 
 setTimeout(() => {
-    console.log(btcData);
+    // console.log(btcData);
 }, 1000);
+
+
+// PROMISE CONSTRUCTOR -----------------------------------------------------------------------------
+
+// If a function doesn't return a promise by default we can create our own
+
+function promiseConstructor(){
+
+    let data = {};
+
+    // Don't have to be chained can do var.then
+
+    const bestPlayer = new Promise(function(resolve, reject){
+        setTimeout(()=> {
+            data = {name : 'Lionel Messi'}
+            data.name === 'Lionel Messi' ? resolve("Yess! Messi is the best") : reject("noope");
+        },1000)
+    })
+    bestPlayer.then(function(response){
+        console.log(response);
+    })
+    bestPlayer.catch(function(response){
+        console.log(response);
+    })
+    
+
+    let currentTemp;
+
+    const tempPromise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+            currentTemp = 22,
+            currentTemp > 19 ? resolve("Success, 20 degress or more today!") : reject("fail, less than 20 degress today");
+        }, 2000);
+    }).then(function(response){
+        console.log(response);
+    }).catch(function(response){
+        console.log(response);
+    })
+
+};
+
+// promiseConstructor();
+
+
+
+// Multiple promises (promise.all)
+
+function promiseConstructorAll(){
+
+    let data = {};
+    const bestPlayer = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            data = {name : 'Lionel Messi'}
+            data.name === 'Lionel Messi' ? resolve("Yess! Messi is the best") : reject("noope");
+        },1000)
+    });
+    
+    let currentTemp;
+    const tempPromise = new Promise(function(resolve, reject){
+        setTimeout(() => {
+            currentTemp = 18,
+            currentTemp > 19 ? resolve("Success, 20 degress or more today!") : reject("fail, less than 20 degress today");
+        }, 2000);
+    });
+
+
+    // runs both promises, Both have to pass
+    Promise.all([bestPlayer, tempPromise])
+        .then((results) => {
+            console.log(results);
+        }
+    );
+    
+    // Both have to settle
+    // Promise.allSettled([bestPlayer, tempPromise])
+    // .then((results) => {
+    //     // Both have to pass
+    //     console.log(results);
+    // })
+    // .catch((message) => {
+    //     console.log(message);
+    // })
+
+    //other methods
+
+    // Promise.any([bestPlayer, tempPromise]) // first one success - returns one result
+    // Promise.race([bestPlayer, tempPromise]) // first one - settled - returns one result
+
+};
+
+// promiseConstructorAll();
+
+
+
+
+// ASYNC - AWAIT -----------------------------------------------------------------------------
+
+async function asyncPromise(){
+    const response = await fetch(dogFetch);
+    const image = await response.json();
+    const imageUrl = image.message;
+    
+    addImage(imageUrl);
+}
+
+// asyncPromise();
+
+
+// Multiple requests
+
+
+async function asyncPromiseAll(){
+    const response = fetch(dogFetch);
+    const response1 = fetch(dogFetch);
+    const response2 = fetch(dogFetch);
+    const results = await Promise.all([response, response1, response2]);
+    results.forEach(async (result) => {
+        const thisResult = await result.json();
+        console.log(thisResult);
+    })
+}
+
+// asyncPromiseAll();
