@@ -729,3 +729,15 @@ async function asyncPromiseAll(){
 }
 
 // asyncPromiseAll();
+
+
+
+
+// DIFFERENT TYPE OF TERNARY OPERATOR -----------------------------------------------------------------------------
+
+let coffeeQuality = 'Good';
+const daysSinceRoasted = 3;
+
+coffeeQuality = daysSinceRoasted > 2 && "okay";
+
+console.log(coffeeQuality);
