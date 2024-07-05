@@ -738,6 +738,7 @@ async function asyncPromiseAll(){
 let coffeeQuality = 'Good';
 const daysSinceRoasted = 3;
 
+// if daysSinceRoasted is more than 2, reassign to "okay"
 coffeeQuality = daysSinceRoasted > 2 && "okay";
 
 console.log(coffeeQuality);
