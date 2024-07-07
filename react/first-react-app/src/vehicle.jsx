@@ -1,15 +1,20 @@
 import PropTypes from "prop-types"
-import ProfilepicPath from "./assets/vehicles/ank-mk38-civilian.jpg"
 
-function Vehicle(props){
+function Vehicle({
+    name = 'Name',
+    dlc = false,
+    description = 'Description',
+    fuelCapacity = 0,
+    profilePicPath = '-'
+}){
 
     return (
         <div className = 'card'>
-            {props.dlc && <span className = 'dlc'>DLC</span>}
-            <img src={ProfilepicPath} alt="Profile image" />
-            <h2>{props.name}</h2>
-            <p>{props.description}</p>
-            <p>Fuel capacity (Litres) : {props.fuelCapacity}</p>
+            {dlc && <span className = 'dlc'>DLC</span>}
+            <img src={profilePicPath} alt="Profile image" />
+            <h2>{name}</h2>
+            <p>{description}</p>
+            <p>Fuel capacity (Litres) : {fuelCapacity}</p>
         </div>
     )
 
@@ -19,13 +24,8 @@ Vehicle.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     fuelCapacity: PropTypes.number,
-    dlc: PropTypes.bool
-}
-Vehicle.defaultProps = {
-    name: "Truck name",
-    description: "Description",
-    fuelCapacity: 0,
-    dlc: false
+    dlc: PropTypes.bool,
+    profilePicPath: PropTypes.string
 }
 
 export default Vehicle

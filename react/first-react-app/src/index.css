@@ -4,10 +4,15 @@ body{
   margin: 0;
 }
 
+:root{
+  --color-accent: deeppink;
+  --color-bg-alt: bisque;
+}
+
 /* Header -------------------- */
 
 .header{
-  background-color: bisque;
+  background-color: var(--color-bg-alt);
   h1{
     padding: 1em;
     margin: 0;
@@ -23,17 +28,22 @@ body{
 
 /* Card -------------------- */
 
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: .5rem;
+  margin: .5rem;
+}
+
 .card{
-  background-color: bisque;
-  width: 100%;
-  max-width: 300px;
+  background-color: var(--color-bg-alt);
   padding: .5rem;
   position: relative;
   border-radius: 4px;
 }
 
 .card .dlc{
-  background-color: deeppink;
+  background-color: var(--color-accent);
   text-transform: uppercase;
   font-weight: bold;
   padding: .5rem;
@@ -50,4 +60,16 @@ body{
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 4px;
+}
+
+.user-greeting{
+  text-align: center;
+  padding:1em;
+  font-weight: bold;
+}
+
+.user-greeting span{
+  background-color: var(--color-accent);
+  color: white;
+  padding: .2em .4em;
 }
