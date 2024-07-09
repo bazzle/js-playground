@@ -1,4 +1,4 @@
-import PropTypes from "prop-types"
+import propTypes from "prop-types"
 
 function Vehicle({
     name = 'Name',
@@ -21,11 +21,11 @@ function Vehicle({
 }
 
 Vehicle.propTypes = {
-    name: PropTypes.string,
-    description: PropTypes.string,
-    fuelCapacity: PropTypes.number,
-    dlc: PropTypes.bool,
-    profilePicPath: PropTypes.string
+    name: propTypes.string,
+    description: propTypes.string,
+    fuelCapacity: propTypes.number,
+    dlc: propTypes.bool,
+    profilePicPath: propTypes.string
 }
 
 export default Vehicle
