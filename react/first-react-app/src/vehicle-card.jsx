@@ -1,4 +1,5 @@
 import propTypes from "prop-types"
+import { useState } from "react"
 
 function Vehicle({
     uniqueKey = 0,
@@ -6,11 +7,18 @@ function Vehicle({
     dlc = false,
     description = 'Description',
     fuelCapacity = 0,
-    profilePicPath = '-'
+    profilePicPath = '-',
 }){
+
+    const [likes, likeSetter] = useState(0);
+    const likeClickHandler = () => {
+        likeSetter(likes +1);
+    }
+
     return (
         <li key={uniqueKey} className = 'card'>
             {dlc && <span className = 'dlc highlight'>DLC</span>}
+            <button className="like-button" onClick={likeClickHandler}>Like 👍 ({likes})</button>
             <img src={profilePicPath} alt="Profile image" />
             <h2>{name}</h2>
             <p>{description}</p>

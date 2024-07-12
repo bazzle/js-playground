@@ -9,8 +9,10 @@ body{
   --color-accent: deeppink;
   --color-bg-alt: bisque;
   --border-radius: 4px;
-  --block-padding--shallow: 1rem;
-  --block-padding: 2rem;
+  --block-spacing--shallow: 1rem;
+  --block-spacing: 2rem;
+  --font-size-std: 1rem;
+  --font-size-small: .8rem;
 }
 
 /* Some resets --------------- */
@@ -21,7 +23,7 @@ p, ul, ol, img, li, h1, h2, h3, h4, h5, h6{
 }
 
 input, button{
-  margin-bottom: var(--block-padding--shallow);
+  margin-bottom: var(--block-spacing--shallow);
 }
 
 button{
@@ -32,6 +34,7 @@ button{
   margin: .5em;
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 /* Header -------------------- */
@@ -39,7 +42,7 @@ button{
 .header{
   background-color: var(--color-bg-alt);
   h1{
-    padding: var(--block-padding);
+    padding: var(--block-spacing);
     margin: 0;
     margin-bottom: 1rem;
   }
@@ -48,7 +51,7 @@ button{
 /* Container -------------------- */
 
 .container{
-  padding:0 var(--block-padding);
+  padding:0 var(--block-spacing);
 }
 
 /* Card -------------------- */
@@ -78,6 +81,7 @@ button{
   right: 1rem;
   z-index: 1;
   border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
 }
 
 .card img{
@@ -86,6 +90,19 @@ button{
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: var(--border-radius);
+  margin-bottom: var(--block-spacing--shallow);
+}
+
+.card .like-button{
+  margin: 0;
+  background:white;
+  color: black;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: var(--font-size-small);
 }
 
 .user-greeting{
@@ -101,7 +118,7 @@ button{
 }
 
 .list-item{
-  padding: var(--block-padding);
+  padding: var(--block-spacing);
 }
 
 .profileImage{
@@ -109,20 +126,20 @@ button{
   height: 300px;
   display: block;
   border-radius: var(--border-radius);
-  padding: var(--block-padding);
+  padding: var(--block-spacing);
 }
 
 .profileSetter{
   background-color: var(--color-accent);
   color: white;
-  padding: var(--block-padding);
+  padding: var(--block-spacing);
 }
 
 .counter{
-  padding: var(--block-padding);
+  padding: var(--block-spacing);
 }
 
 .form{
-  padding: var(--block-padding);
+  padding: var(--block-spacing);
   background: var(--color-bg-alt);
 }

@@ -9,7 +9,8 @@ function MyForm(){
     const placeHolder = '...';
 
     return (
-        <div class="form">
+        // Note use of onChange attribute
+        <div className="form">
             <input placeholder='Name' value={name} onChange={handleNameChange} />
             <p>Hello { !name ? placeHolder : name}</p>
         </div>
