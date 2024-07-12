@@ -17,13 +17,22 @@ body{
 
 /* Some resets --------------- */
 
-p, ul, ol, img, li, h1, h2, h3, h4, h5, h6{
+p, ul, ol, img, li, h1, h2, h3, h4, h5, h6, input, select, textarea, label{
   padding-top: 0;
   margin-top: 0;
 }
 
-input, button{
+input, button, label, textarea{
   margin-bottom: var(--block-spacing--shallow);
+}
+
+/* Some common elements --------------- */
+
+hr{
+  border: 0;
+  background-color: black;
+  height: 1px;
+  margin-bottom: var(--block-spacing);
 }
 
 button{
@@ -139,7 +148,24 @@ button{
   padding: var(--block-spacing);
 }
 
-.form{
+/* Form -------------------- */
+
+.form-section{
   padding: var(--block-spacing);
   background: var(--color-bg-alt);
+}
+
+.form{
+  margin-bottom: var(--block-spacing);
+}
+
+.form label{
+  display: block;
+}
+
+/* Footer -------------------- */
+
+.footer{
+  padding: var(--block-spacing);
+  height: 300px;
 }

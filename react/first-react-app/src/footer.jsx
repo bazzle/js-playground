@@ -1,8 +1,7 @@
 function Footer(){
     return(
         <>
-            <footer>
-                <hr />
+            <footer className="footer">
                 &copy; Bazzle {new Date().getFullYear()}
             </footer>
         </>

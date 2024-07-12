@@ -11,8 +11,9 @@ function Vehicle({
 }){
 
     const [likes, likeSetter] = useState(0);
-    const likeClickHandler = () => {
+    const likeClickHandler = (event) => {
         likeSetter(likes +1);
+        event.shiftKey && likeSetter(likes +10);
     }
 
     return (
