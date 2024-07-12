@@ -10,6 +10,7 @@ import ProfileImage from "./profile-image.jsx"
 import MyStateComponent from "./useState-hook.jsx"
 import Counter from "./counter.jsx"
 import MyForm from "./my-form.jsx"
+import ColorPicker from "./color-picker.jsx"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <MyStateComponent/>
         <Counter />
         <MyForm />
+        <ColorPicker/>
 
         <Footer/>
     </>
