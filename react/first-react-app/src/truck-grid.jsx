@@ -2,6 +2,7 @@ import Vehicle from "./vehicle.jsx"
 
 function TruckGrid(){
   return (
+
     <div className="grid">
       <Vehicle
         name = "ANK MK38 Civilian"

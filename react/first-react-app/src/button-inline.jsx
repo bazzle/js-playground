@@ -1,15 +1,24 @@
 function ButtonInline(){
     const styles = {
-        border:'none',
-        textTransform:'uppercase',
-        padding:'.5em .8em',
-        margin: '.5em',
-        backgroundColor:'rgb(48, 36, 0)',
-        color: 'white',
-        fontWeight: 'bold'
+        backgroundColor : 'bisque',
+        color : 'black'
     }
+
+    let count = 0;
+
+    const handleClick = (evt, name) => {
+        if (count < 5){
+            count++;
+            evt.target.innerText = `${name}, You double clicked me ${count} times`;
+        } else {
+            evt.target.innerText = `Alright I'm done`;
+        }
+
+    }
+
+    // Notice how we use the arow function, as we need to pass in a parameter.
     return (
-        <button style = {styles}>Explore more trucks</button>
+        <button onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>Double click me</button>
     )
 }
 
