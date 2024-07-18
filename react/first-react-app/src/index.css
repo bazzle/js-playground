@@ -184,6 +184,21 @@ button{
   display: inline-block;
 }
 
+/* Truck categories -------------- */
+
+.truck-categories__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .5rem;
+  margin: .5rem;
+}
+
+.truck-categories__item{
+  background-color: var(--color-bg-alt);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
 /* Footer -------------------- */
 
 .footer{

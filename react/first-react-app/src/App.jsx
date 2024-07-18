@@ -11,6 +11,7 @@ import MyStateComponent from "./useState-hook.jsx"
 import Counter from "./counter.jsx"
 import MyForm from "./my-form.jsx"
 import ColorPicker from "./color-picker.jsx"
+import TruckCategories from "./truck-categories.jsx"
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         <Counter />
         <MyForm />
         <ColorPicker/>
-
+        <TruckCategories/>
         <Footer/>
     </>
   )
