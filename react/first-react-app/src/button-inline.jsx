@@ -9,9 +9,9 @@ function ButtonInline(){
     const handleClick = (evt, name) => {
         if (count < 5){
             count++;
-            evt.target.innerText = `${name}, You double clicked me ${count} times`;
+            evt.target.innerHTML = <>{name}, You double clicked me {count} times</>;
         } else {
-            evt.target.innerText = `Alright I'm done`;
+            evt.target.innerText = <>Alright I'm done</>;
         }
 
     }
@@ -21,5 +21,4 @@ function ButtonInline(){
         <button onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>Double click me</button>
     )
 }
-
 export default ButtonInline;
