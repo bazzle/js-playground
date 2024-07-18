@@ -1,24 +1,32 @@
+import { useState } from "react";
+
 function ButtonInline(){
     const styles = {
         backgroundColor : 'bisque',
         color : 'black'
     }
 
-    let count = 0;
+    const [count, countSetter] = useState(1);
+    const [message, messageSetter] = useState(<>Double click me</>);
 
     const handleClick = (evt, name) => {
-        if (count < 5){
-            count++;
-            evt.target.innerHTML = <>{name}, You double clicked me {count} times</>;
+        const message1 = <>{name} You double clicked me {count} times</>;
+        const message2 = <>Alright I'm done</>;
+        countSetter(count +1);
+        if (count < 6){
+            messageSetter(message1);
         } else {
-            evt.target.innerText = <>Alright I'm done</>;
+            messageSetter(message2);
         }
 
     }
 
     // Notice how we use the arow function, as we need to pass in a parameter.
     return (
-        <button onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>Double click me</button>
+        <button onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>
+            {message}
+        </button>
     )
 }
+
 export default ButtonInline;
