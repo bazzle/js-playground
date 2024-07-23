@@ -199,6 +199,28 @@ button{
   padding: 1rem;
 }
 
+/* Fave truck --------------- */
+
+.fave-truck{
+  padding: var(--block-spacing);
+}
+
+.fave-truck__form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+}
+
+.fave-truck__form__section{
+  display: flex;
+  flex-direction: column;
+  label{
+    margin-bottom: .5em;
+    font-size: .8rem;
+  }
+}
+
 /* Footer -------------------- */
 
 .footer{

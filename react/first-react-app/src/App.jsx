@@ -12,6 +12,7 @@ import Counter from "./counter.jsx"
 import MyForm from "./my-form.jsx"
 import ColorPicker from "./color-picker.jsx"
 import TruckCategories from "./truck-categories.jsx"
+import FaveTruck from "./fave-truck.jsx"
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
         <MyForm />
         <ColorPicker/>
         <TruckCategories/>
+        <FaveTruck/>
+
         <Footer/>
     </>
   )
