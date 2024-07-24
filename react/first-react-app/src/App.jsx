@@ -13,6 +13,7 @@ import MyForm from "./my-form.jsx"
 import ColorPicker from "./color-picker.jsx"
 import TruckCategories from "./truck-categories.jsx"
 import FaveTruck from "./fave-truck.jsx"
+import FaveRegion from "./fave-region.jsx"
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <ColorPicker/>
         <TruckCategories/>
         <FaveTruck/>
+		<FaveRegion/>
 
         <Footer/>
     </>

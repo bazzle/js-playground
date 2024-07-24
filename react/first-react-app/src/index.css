@@ -1,7 +1,7 @@
 body{
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
 }
 
 :root{
@@ -41,10 +41,26 @@ button{
   border: none;
   text-transform: uppercase;
   padding: .5em .8em;
-  margin: .5em;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.form{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 200px;
+  }
+  
+.form__section{
+	display: flex;
+	flex-direction: column;
+	label{
+		margin-bottom: .5em;
+		font-size: .8rem;
+	}
 }
 
 /* Header -------------------- */
@@ -157,11 +173,13 @@ button{
 }
 
 .form{
-  margin-bottom: var(--block-spacing);
-}
-
-.form label{
-  display: block;
+	margin-bottom: var(--block-spacing);
+	label{
+		display: block;
+	}
+	input{
+		padding:.3em;
+	}
 }
 
 /* Color picker -------------------- */
@@ -205,20 +223,22 @@ button{
   padding: var(--block-spacing);
 }
 
-.fave-truck__form{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 200px;
+/* Fave regions --------------- */
+
+.fave-regions{
+	padding: var(--block-spacing);
 }
 
-.fave-truck__form__section{
-  display: flex;
-  flex-direction: column;
-  label{
-    margin-bottom: .5em;
-    font-size: .8rem;
-  }
+.fave-regions__list__remove{
+	background: none;
+	padding: 0;
+	margin: 0;
+	margin-left: .5em;
+	border-radius: unset;
+	color: var(--color-accent);
+	text-transform: unset;
+	font-size: inherit;
+	font-weight: unset;
 }
 
 /* Footer -------------------- */
