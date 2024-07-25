@@ -14,6 +14,7 @@ import ColorPicker from "./color-picker.jsx"
 import TruckCategories from "./truck-categories.jsx"
 import FaveTruck from "./fave-truck.jsx"
 import FaveRegion from "./fave-region.jsx"
+import TruckMaker from "./truck-maker.jsx"
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <TruckCategories/>
         <FaveTruck/>
 		<FaveRegion/>
+		<TruckMaker/>
 
         <Footer/>
     </>

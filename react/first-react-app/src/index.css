@@ -37,30 +37,19 @@ hr{
 }
 
 button{
-  background-color: var(--color-foreground);
-  border: none;
-  text-transform: uppercase;
-  padding: .5em .8em;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: var(--border-radius);
+	border: none;
+	cursor: pointer;
 }
 
-.form{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 200px;
-  }
-  
-.form__section{
-	display: flex;
-	flex-direction: column;
-	label{
-		margin-bottom: .5em;
-		font-size: .8rem;
-	}
+.button{
+	border: none;
+	cursor: pointer;
+	background-color: var(--color-foreground);border: none;
+	text-transform: uppercase;
+	padding: .5em .8em;
+	color: white;
+	font-weight: bold;
+	border-radius: var(--border-radius);
 }
 
 /* Header -------------------- */
@@ -167,19 +156,36 @@ button{
 
 /* Form -------------------- */
 
-.form-section{
-  padding: var(--block-spacing);
-  background: var(--color-bg-alt);
+.form{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 200px;
 }
 
-.form{
-	margin-bottom: var(--block-spacing);
+input{
+	margin-bottom: 0;
+}
+
+input[type='text'],
+input[type='textarea'],
+input[type='number']{
+	padding: .5em;
+}
+  
+.form__section{
+	display: flex;
+	flex-direction: column;
+	margin-top: var(--block-spacing--shallow);
 	label{
 		display: block;
+		margin-bottom: .5em;
+		font-size: .8rem;
 	}
-	input{
-		padding:.3em;
-	}
+}
+
+.form__section--submit{
+	margin-top: var(--block-spacing);
 }
 
 /* Color picker -------------------- */
@@ -239,6 +245,12 @@ button{
 	text-transform: unset;
 	font-size: inherit;
 	font-weight: unset;
+}
+
+/* Truck maker --------------- */
+
+.truck-maker{
+	padding: var(--block-spacing);
 }
 
 /* Footer -------------------- */

@@ -18,16 +18,23 @@ function FaveRegion(){
 	}
 
 	// Note use of round brackets in the callback function. instead of curly. This is the jsx way of identifying what to render. Alternatively, keep curly brackets, but use return keyword.
+	// Note the use of the ternary operator, which is how we do conditionals in JSX
 	return (
 		<div className="fave-regions">
-			<ul className="fave-regions__list">
-				{regions.map((region, index) => (
-					<li key={index}>
-						{region}
-						<button onClick={() => handleRemoveRegion(index)} className="fave-regions__list__remove">(Remove)</button>
-					</li>
-				))}
-			</ul>
+			{
+				regions.length > 0 ? (
+					<ul className="fave-regions__list">
+					{regions.map((region, index) => (
+						<li key={index}>
+							{region}
+							<button onClick={() => handleRemoveRegion(index)} className="fave-regions__list__remove">(Remove)</button>
+						</li>
+					))}
+					</ul>
+				) : (
+					<p>Please add a region below.</p>
+				)
+			}
 
 			<form className='form'>
 				<div className="form__section">
