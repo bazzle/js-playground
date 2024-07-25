@@ -20,13 +20,15 @@ function MyStateComponent(){
     }
 
     return (
-        <div className="profileSetter">
-            <p>Name : {name}</p>
-            <p>Age : {age}</p>
-            <p>Employment status : {employed ? 'Trucker' : 'Unemployed'}</p>
-            <button onClick={() => updateName()}>Give cool name</button>
-            <button onClick={() => updateAge()}>Set age</button>
-            <button onClick={() => updateEmployment()}>Toggle job</button>
+		<div className="profileSetter">
+			<p>Name : {name}</p>
+			<p>Age : {age}</p>
+			<p>Employment status : {employed ? 'Trucker' : 'Unemployed'}</p>
+			<div className="button-group">
+				<button className="button" onClick={() => updateName()}>Give cool name</button>
+				<button className="button" onClick={() => updateAge()}>Set age</button>
+				<button className="button" onClick={() => updateEmployment()}>Toggle job</button>
+			</div>
         </div>
     )
 

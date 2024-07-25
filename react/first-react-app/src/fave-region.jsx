@@ -40,7 +40,9 @@ function FaveRegion(){
 				<div className="form__section">
 					<label htmlFor="new-region">New region</label>
 					<input placeholder="Enter region" id="region-input" type="text" />
-					<button onClick = {handleNewRegion}>Add Region</button>
+				</div>
+				<div className="form__section form__section--submit">
+					<button className="button" onClick = {handleNewRegion}>Add Region</button>
 				</div>
 			</form>
 		</div>

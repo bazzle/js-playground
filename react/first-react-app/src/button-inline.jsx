@@ -11,7 +11,7 @@ function ButtonInline(){
 
     const handleClick = (evt, name) => {
         const message1 = <>{name} You double clicked me {count} times</>;
-        const message2 = <>Alright I'm done</>;
+        const message2 = <>Alright Im done</>;
         countSetter(count +1);
         if (count < 6){
             messageSetter(message1);
@@ -23,7 +23,7 @@ function ButtonInline(){
 
     // Notice how we use the arow function, as we need to pass in a parameter.
     return (
-        <button onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>
+        <button className="button" onDoubleClick={(evt) => handleClick(evt, 'bazzle')} style = {styles}>
             {message}
         </button>
     )

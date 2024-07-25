@@ -13,7 +13,9 @@ function ListBuilder(props){
     return(
         <div className="list-item">
             <h2>{props.listName}</h2>
-            {inputListFormatted}
+			<ul>
+				{inputListFormatted}
+			</ul>
         </div>
     )
 }

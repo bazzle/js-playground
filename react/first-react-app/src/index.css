@@ -52,6 +52,18 @@ button{
 	border-radius: var(--border-radius);
 }
 
+.button-group{
+	display:flex;
+	gap:.5em;
+}
+
+li{
+	list-style-type: square;
+	&::marker{
+		color: var(--color-accent);
+	}
+}
+
 /* Header -------------------- */
 
 .header{
@@ -118,6 +130,7 @@ button{
   border-radius: var(--border-radius);
   font-weight: bold;
   font-size: var(--font-size-small);
+  padding: .5rem;
 }
 
 .user-greeting{
@@ -161,6 +174,7 @@ button{
 	flex-direction: column;
 	width: 100%;
 	max-width: 200px;
+	margin-bottom: var(--block-spacing);
 }
 
 input{
