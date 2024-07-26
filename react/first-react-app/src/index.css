@@ -184,7 +184,7 @@ input{
 
 input[type='text'],
 input[type='textarea'],
-input[type='number']{
+input[type='number'], select{
 	padding: .5em;
 }
   
@@ -201,6 +201,12 @@ input[type='number']{
 
 .form__section--submit{
 	margin-top: var(--block-spacing);
+}
+
+/* Simple form -------------------- */
+
+.simple-form{
+	padding: var(--block-spacing);
 }
 
 /* Color picker -------------------- */

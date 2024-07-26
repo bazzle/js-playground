@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Counter(){
 
     const [count, setCount] = useState(0);
+
+	useEffect(() => {
+		document.title = `Counter: ${count}`;
+	}, [count]);
 
     const increment = () => {
         setCount(count +1);
