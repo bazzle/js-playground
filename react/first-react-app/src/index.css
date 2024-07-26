@@ -179,6 +179,7 @@ li{
 
 input{
 	margin-bottom: 0;
+	border-radius: var(--border-radius);
 }
 
 input[type='text'],
@@ -265,6 +266,76 @@ input[type='number']{
 
 .truck-maker{
 	padding: var(--block-spacing);
+}
+
+/* Todo list ----------------- */
+
+.todolist{
+	padding: var(--block-spacing);
+	--component-width: 500px;
+}
+
+.todolist__list{
+	padding-left: 0;
+	margin-left: 0;
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+	width: auto;
+	width: var(--component-width);
+	padding-bottom: .5em;
+	margin-bottom: var(--block-spacing);
+}
+
+.todolist__item{
+	list-style: none;
+	margin-left: 0;
+	display: flex;
+	gap: .5em;
+	width: 100%;
+}
+
+.todolist__item__name{
+	background-color: var(--color-bg-alt);
+	padding: .5em 1em;
+	border-radius: var(--border-radius);
+	flex-grow: 1;
+	font-weight: bold;
+}
+
+.todolist__item__shift{
+	background: transparent;
+	margin: 0;
+	flex-shrink: 0;
+	border:1px solid var(--color-foreground);
+	color: var(--color-foreground);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.todolist__item button{
+	margin-bottom: 0;
+	line-height: 1;
+	&:hover{
+		background: var(--color-accent);
+		color: white;
+	}
+}
+
+.todolist__form{
+	display: flex;
+	gap: .5em;
+	width: var(--component-width);
+	button{
+		margin-bottom: 0;
+	}
+	input[type='text']{
+		flex-grow: 1;
+		flex-shrink: 0;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
 }
 
 /* Footer -------------------- */

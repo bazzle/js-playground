@@ -15,6 +15,7 @@ import TruckCategories from "./truck-categories.jsx"
 import FaveTruck from "./fave-truck.jsx"
 import FaveRegion from "./fave-region.jsx"
 import TruckMaker from "./truck-maker.jsx"
+import TodoList from "./todolist.jsx"
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
         <FaveTruck/>
 		<FaveRegion/>
 		<TruckMaker/>
+		<TodoList/>
 
         <Footer/>
     </>
