@@ -1,12 +1,7 @@
-body{
-	font-family: sans-serif;
-	padding: 0;
-	margin: 0;
-}
-
 :root{
   --color-foreground: #3d4608;
   --color-accent: #ff1493;
+  --color-bg: white;
   --color-bg-alt: bisque;
   --color-feint-line: #e5e5e5;
   --border-radius: 4px;
@@ -14,6 +9,16 @@ body{
   --block-spacing: 2rem;
   --font-size-std: 1rem;
   --font-size-small: .8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root{
+		--color-foreground: #ffffff;
+		--color-accent: #ff1493;
+		--color-bg: #000000;
+		--color-bg-alt: #1d1d1d;
+		--color-feint-line: #4c4c4c;
+	  }
 }
 
 /* Some resets --------------- */
@@ -25,6 +30,16 @@ p, ul, ol, img, li, h1, h2, h3, h4, h5, h6, input, select, textarea, label{
 
 input, button, label, textarea{
   margin-bottom: var(--block-spacing--shallow);
+}
+
+/* Base -------------------------------- */
+
+body{
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: var(--color-bg);
+	color: var(--color-foreground);
 }
 
 /* Some common elements --------------- */
@@ -44,10 +59,11 @@ button{
 .button{
 	border: none;
 	cursor: pointer;
-	background-color: var(--color-foreground);border: none;
+	background-color: var(--color-foreground);
+	border: none;
 	text-transform: uppercase;
 	padding: .5em .8em;
-	color: white;
+	color: var(--color-bg);
 	font-weight: bold;
 	border-radius: var(--border-radius);
 }
@@ -122,8 +138,8 @@ li{
 
 .card .like-button{
   margin: 0;
-  background:white;
-  color: black;
+  background:var(--color-foreground);
+  color: var(--color-bg);
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -342,6 +358,20 @@ input[type='number'], select{
 		padding-left: 1em;
 		padding-right: 1em;
 	}
+}
+
+.mounting{
+	padding: var(--block-spacing);
+}
+
+/* Hover box -------------------- */
+
+#hover-box{
+	width: 120px;
+	height: 120px;
+	background-color: var(--color-accent);
+	padding: .5em;
+	border-radius: var(--border-radius);
 }
 
 /* Footer -------------------- */

@@ -16,6 +16,7 @@ import FaveTruck from "./fave-truck.jsx"
 import FaveRegion from "./fave-region.jsx"
 import TruckMaker from "./truck-maker.jsx"
 import TodoList from "./todolist.jsx"
+import MountingFun from "./use-effect2.jsx"
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
 		<FaveRegion/>
 		<TruckMaker/>
 		<TodoList/>
+		<MountingFun/>
 
         <Footer/>
     </>
