@@ -4,6 +4,9 @@ function Counter(){
 
     const [count, setCount] = useState(0);
 
+	// This is a useEffect function. It has a "dependency" (count) When count state variable updates, it fires.
+
+	
 	useEffect(() => {
 		document.title = `Counter: ${count}`;
 	}, [count]);
