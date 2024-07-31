@@ -374,6 +374,17 @@ input[type='number'], select{
 	border-radius: var(--border-radius);
 }
 
+/* Nested values -------------------- */
+
+.nested-values{
+	padding: 1rem;
+	width: 50vw;
+}
+.nested-values__box{
+	padding: 1rem;
+	border: 1px solid var(--color-accent);
+}
+
 /* Footer -------------------- */
 
 .footer{

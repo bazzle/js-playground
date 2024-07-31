@@ -17,6 +17,7 @@ import FaveRegion from "./fave-region.jsx"
 import TruckMaker from "./truck-maker.jsx"
 import TodoList from "./todolist.jsx"
 import MountingFun from "./use-effect2.jsx"
+import NestedValues from "./nested-values.jsx"
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
 		<TruckMaker/>
 		<TodoList/>
 		<MountingFun/>
+		<NestedValues/>
 
         <Footer/>
     </>
