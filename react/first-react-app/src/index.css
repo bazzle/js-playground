@@ -377,12 +377,18 @@ input[type='number'], select{
 /* Nested values -------------------- */
 
 .nested-values{
-	padding: 1rem;
+	padding: var(--block-spacing);
 	width: 50vw;
 }
 .nested-values__box{
 	padding: 1rem;
 	border: 1px solid var(--color-accent);
+}
+
+/* Inputref -------------------- */
+
+.input-ref{
+	padding: var(--block-spacing);
 }
 
 /* Footer -------------------- */

@@ -18,38 +18,37 @@ import TruckMaker from "./truck-maker.jsx"
 import TodoList from "./todolist.jsx"
 import MountingFun from "./use-effect2.jsx"
 import NestedValues from "./nested-values.jsx"
+import UseReference from "./use-reference.jsx"
 
 function App() {
-
-  return (
-    <>
-        <Header/>
-        <UserGreeting
-          isLoggedIn = {true}
-          userName = 'Bazzle'
-        />
-        <TruckGrid/>
-        <Button/>
-        <ButtonInline/>
-        <TruckTypes/>
-        <Regions/>
-        <ProfileImage/>
-        <MyStateComponent/>
-        <Counter />
-        <MyForm />
-        <ColorPicker/>
-        <TruckCategories/>
-        <FaveTruck/>
-		<FaveRegion/>
-		<TruckMaker/>
-		<TodoList/>
-		<MountingFun/>
-		<NestedValues/>
-
-        <Footer/>
-    </>
-  )
-
+	return (
+		<>
+			<Header/>
+			<UserGreeting
+				isLoggedIn = {true}
+				userName = 'Bazzle'
+			/>
+			<TruckGrid/>
+			<Button/>
+			<ButtonInline/>
+			<TruckTypes/>
+			<Regions/>
+			<ProfileImage/>
+			<MyStateComponent/>
+			<Counter />
+			<MyForm />
+			<ColorPicker/>
+			<TruckCategories/>
+			<FaveTruck/>
+			<FaveRegion/>
+			<TruckMaker/>
+			<TodoList/>
+			<MountingFun/>
+			<NestedValues/>
+    		<UseReference/>
+			<Footer/>
+    	</>
+  	)
 }
 
 export default App
