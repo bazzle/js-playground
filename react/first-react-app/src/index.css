@@ -391,6 +391,12 @@ input[type='number'], select{
 	padding: var(--block-spacing);
 }
 
+/* Playing ------------------- */
+
+.playing{
+	padding: var(--block-spacing);
+}
+
 /* Footer -------------------- */
 
 .footer{

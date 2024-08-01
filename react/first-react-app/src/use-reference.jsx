@@ -15,6 +15,7 @@ function UseReference(){
 	const handleButtonClick = (evt) => {
 		evt.preventDefault();
 		buttonRef.current.style.backgroundColor = "orange";
+		buttonRef.current.style.color = "black";
 	}
 
 	useEffect(() => {

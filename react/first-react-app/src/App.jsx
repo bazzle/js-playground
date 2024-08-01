@@ -19,6 +19,7 @@ import TodoList from "./todolist.jsx"
 import MountingFun from "./use-effect2.jsx"
 import NestedValues from "./nested-values.jsx"
 import UseReference from "./use-reference.jsx"
+import Playing from "./playing.jsx"
 
 function App() {
 	return (
@@ -46,6 +47,8 @@ function App() {
 			<MountingFun/>
 			<NestedValues/>
     		<UseReference/>
+			<Playing/>
+			
 			<Footer/>
     	</>
   	)
